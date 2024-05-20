@@ -1,9 +1,9 @@
 package io.diegorramos.javablocking.infrastructure;
 
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Component;
 
-@Repository
+@Component
 public class CustomOrderRepositoryImpl implements CustomOrderRepository {
     
     private final JdbcTemplate jdbcTemplate;

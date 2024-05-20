@@ -13,11 +13,15 @@ public class OrderService {
         this.repository = repository;
     }
     
+    public Iterable<Order> listAll() {
+        return repository.findAll();
+    }
+    
     public Order save(Order order) {
         return repository.save(order);
     }
     
     public Order getById(String id) {
-        return repository.getById(id);
+        return repository.findById(id).get();
     }
 }

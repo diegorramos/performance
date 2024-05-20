@@ -11,7 +11,7 @@ public record Order(
         @Column("id")
         String id,
         
-        @Column("orderId")
+        @Column("order_id")
         String orderId,
         
         @Column("description")
