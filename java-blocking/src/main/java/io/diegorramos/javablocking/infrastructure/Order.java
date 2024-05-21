@@ -1,17 +1,34 @@
 package io.diegorramos.javablocking.infrastructure;
 
-import org.springframework.data.relational.core.mapping.Column;
-import org.springframework.data.relational.core.mapping.Table;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
+@Entity
 @Table(name = "orders")
-public record Order(
-        
-        @Column("id")
-        String id,
-        
-        @Column("order_id")
-        String orderId,
-        
-        @Column("description")
-        String description
-) {}
+public class Order {
+    @Id
+    @Column(name = "id")
+    private String id;
+    
+    @Column(name = "order_id")
+    private String orderId;
+    
+    @Column(name = "description")
+    private String description;
+    
+    public String getId() {
+        return id;
+    }
+    
+    public String getOrderId() {
+        return orderId;
+    }
+    
+    public String getDescription() {
+        return description;
+    }
+    
+    public Order() {}
+}
